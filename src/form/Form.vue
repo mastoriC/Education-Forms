@@ -6,7 +6,7 @@
                     <img class="w-100" src="../../imgs/KMITL_logo.png" alt="">
                 </div>
                 <h1 class="font-weight-lighter">ระบบรายงานรายละเอียดรายวิชา</h1>
-                <h5>สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</h5>
+                <h5 class="pb-4">สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</h5>
                 <h4 class="mb-4 mt-5">กรุณาเลือกคณะและสาขา</h4>
                 <div class="col-12 col-md-8 col-lg-6 offset-md-2 offset-lg-3">
                     <multiselect
@@ -16,7 +16,7 @@
                         select-label="เลือก"
                         deselect-label="ยกเลิก"
                         selected-label=""
-                        maxHeight="200"
+                        :maxHeight="200"
                         placeholder="คณะที่เลือก"
                         class="my-3">
                     </multiselect>
@@ -26,13 +26,14 @@
                         select-label="เลือก"
                         deselect-label="ยกเลิก"
                         selected-label=""
-                        maxHeight="200"
+                        :maxHeight="200"
                         placeholder="สาขาที่เลือก"
                         class="my-3">
-                        <span slot="noOptions" class="text-secondary">ไม่สามารถเลือกสาขาได้</span>
+                        <span v-if="this.selectedFaculty === ''" slot="noOptions" class="text-secondary">ไม่สาขาค้นหาสาขาได้ กรุณาเลือกคณะ</span>
+                        <span v-else slot="noOptions" class="text-secondary">ไม่สามารถเลือกสาขาได้</span>
                     </multiselect>
                 </div>
-                <div class="btn btn-next bottom">
+                <div class="btn bottom" :class="isEmpty() ? 'btn-disable' : 'btn-next' ">
                     <span class="h5 font-weight-lighter m-0">กรอกรายละเอียด</span>
                 </div>
             </div>
@@ -41,6 +42,10 @@
 </template>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style scoped>
+.btn-disable {
+    border: 1px solid grey;
+    color: grey
+}
 .btn-next {
     background-color: #F78141;
     color: white;
@@ -70,6 +75,10 @@ export default {
         }
     },
     methods: {
+        isEmpty() {
+            return (this.selectedFaculty == "" || this.selectedMajor == "");
+        },
+
         getFacTH({id, th}) {
             return `[${id}] คณะ${th}`;
         },
