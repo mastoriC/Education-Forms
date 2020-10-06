@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid bg-kmitl-linear py-5 vh-100">
         <div class="container rounded-lg shadow h-100 p-5 bg-white">
-            <div class="text-center">
+            <div class="text-center h-100 position-relative">
                 <div class="col-8 col-md-6 col-lg-4 offset-2 offset-md-3 offset-lg-4 px-5 mb-5">
                     <img class="w-100" src="../../imgs/KMITL_logo.png" alt="">
                 </div>
@@ -32,11 +32,28 @@
                         <span slot="noOptions" class="text-secondary">ไม่สามารถเลือกสาขาได้</span>
                     </multiselect>
                 </div>
+                <div class="btn btn-next bottom">
+                    <span class="h5 font-weight-lighter m-0">กรอกรายละเอียด</span>
+                </div>
             </div>
         </div>
     </div>
 </template>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
+<style scoped>
+.btn-next {
+    background-color: #F78141;
+    color: white;
+}
+.btn-next:hover {
+    background-color: #E35205;
+}
+.bottom {
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+</style>
 <script>
 import Multiselect from 'vue-multiselect'
 
