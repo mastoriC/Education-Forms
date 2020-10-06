@@ -1,0 +1,27 @@
+{
+  "name": "education-forms",
+  "version": "1.0.0",
+  "description": "Education 's forms and reports",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg": "^8.4.0",
+    "vue": "^2.6.12",
+    "vue-multiselect": "^2.1.6",
+    "vue-router": "^3.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mastoriC/Education-Forms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mastoriC/Education-Forms/issues"
+  },
+  "homepage": "https://github.com/mastoriC/Education-Forms#readme"
+}

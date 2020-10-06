@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Chakra Petch', sans-serif;
+}
+.bg-kmitl {
+    background-color: #E35205;
+}
+.bg-kmitl-linear {
+    background: linear-gradient(-45deg, #E35205, #F58F58);
+}
